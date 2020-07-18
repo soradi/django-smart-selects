@@ -89,7 +89,7 @@
                 $(chainfield).change(function () {
                     // Handle the case of inlines, where the ID will depend on which list item we are dealing with
                     var prefix, start_value, this_val, localID = id;
-                    if (localID.indexOf("__prefix__") > -1) {
+                    if (localID.indexOf("__prefix__") > -1 && $(this).attr("id")!=localID) {
                         prefix = $(this).attr("id").match(/\d+/)[0];
                         localID = localID.replace("__prefix__", prefix);
                     }
